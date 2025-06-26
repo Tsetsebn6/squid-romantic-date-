@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <title>Squid Game болзоо</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+    body {
+      background: black;
+      font-family: 'Orbitron', sans-serif;
+      color: #ff4da6;
+      text-align: center;
+      padding: 50px;
+      background-image: url('https://cdn.pixabay.com/photo/2021/10/08/16/11/squid-game-6691053_1280.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    .glass {
+      background: rgba(0, 0, 0, 0.75);
+      padding: 40px;
+      border-radius: 15px;
+      display: inline-block;
+      margin-top: 60px;
+      max-width: 90%;
+    }
+    h1 {
+      font-size: 3em;
+      color: #ff4da6;
+    }
+    .shapes {
+      font-size: 2em;
+      margin: 10px 0;
+      color: white;
+    }
+    .question {
+      font-size: 1.5em;
+      margin: 30px 0;
+    }
+    button {
+      background-color: #ff3385;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      padding: 15px 30px;
+      font-size: 1.1em;
+      margin: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background-color: #ff1a66;
+    }
+    .heart {
+      font-size: 40px;
+      animation: pulse 1.5s infinite;
+      margin-top: 20px;
+    }
+    @keyframes pulse {
+      0%,100% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+    }
+    .footer {
+      margin-top: 30px;
+      font-size: 0.9em;
+      color: #ffb3d9;
+    }
+    .masked {
+      margin-top: 20px;
+    }
+    .chat {
+      margin-top: 30px;
+      background: #1a1a1a;
+      padding: 20px;
+      border-radius: 10px;
+      color: #fff;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .chat p {
+      margin: 8px 0;
+    }
+    .green {
+      color: #00ff66;
+      font-weight: bold;
+    }
+    .red {
+      color: #ff3333;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="glass">
+    <div class="shapes">🔺 ⬛ ⭕</div>
+    <h1>Squid Game 💘</h1>
+    <div class="question">
+      Орой надтай <b>Squid Game</b> үзэж болзоонд явах уу? 🥺
+    </div>
+    <button onclick="startGreenLight()">ТИЙМ!</button>
+    <button onclick="redLight()">Үгүй ээ...</button>
+    <div class="heart">❤️</div>
+    <div class="masked">
+      <img src="https://cdn-icons-png.flaticon.com/512/7341/7341305.png" width="100" alt="Masked Guard">
+    </div>
+    <div class="chat" id="chatBox" style="display:none;">
+      <p class="green">🟢 Green light: Болзоонд бэлдээрэй!</p>
+      <p class="green">🥤 Би попкорн авна. Чи?</p>
+      <p class="green">🎬 Цаг: 19:00</p>
+      <p class="green">🤫 Гэртээ эсвэл Netflix party?</p>
+    </div>
+    <div class="chat" id="redBox" style="display:none;">
+      <p class="red">🔴 Red light: Хайрын тоглоомоос мултарлаа.</p>
+      <p class="red">😢 За тэгвэл дараа уулзая гэж найдая...</p>
+      <p class="red">🫣 Би бол true player байлаа шүү дээ!</p>
+    </div>
+    <audio id="squidSong" src="https://cdn.pixabay.com/audio/2021/10/10/audio_b39592a9fc.mp3"></audio>
+    <div class="footer">
+      Цэцэнбилэгээс Squid Game style 💌
+    </div>
+  </div>
+  <script>
+    function startGreenLight() {
+      document.getElementById("chatBox").style.display = "block";
+      document.getElementById("redBox").style.display = "none";
+      document.getElementById("squidSong").play();
+      alert("🟢 Green light! Болзоондоо бэлдэе~");
+    }
+    function redLight() {
+      document.getElementById("redBox").style.display = "block";
+      document.getElementById("chatBox").style.display = "none";
+      alert("🔴 Red light! Хайрын тоглоом дууслаа...");
+    }
+  </script>
+</body>
+</html>
